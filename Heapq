@@ -1,0 +1,28 @@
+347. Top K Frequent Elements
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.  
+
+nums = [1,1,1,2,2,3], k = 2
+
+Generally, we build hashmap, then we solve the problem . 
+
+What if the interviewer ask to solve the problem using min-heap or maximum heap 
+
+Want Largest K Elements?
+    Use Min Heap
+
+Want Smallest K Elements?
+    Use Max Heap 
+
+Python has default min-heap method only that mean it store largest element, elminated least element , popup smallest elements. 
+Python doesn't have max-heap , it stores larger elements at top, instead that we use -negative frequencies storing the values in heap. 
+Solve the Problem 
+
+import heapq --> defines the heapq functions to access the methods inside it 
+
+heap = [] --> denotes generall list 
+
+heapq.headpush(heap , (frequencies , number)) 
+
+headpush -- method of pushing element into the list 
+heapq -- list 
