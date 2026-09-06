@@ -1,0 +1,29 @@
+set mismatch maths intituation 
+
+diff = d - m
+
+diff_sq = d² - m²
+diff_sq = (d - m)(d + m)
+
+d + m = diff_sq / diff
+duplicate = ((d + m) + diff) // 2
+
+m = duplicate - diff 
+
+---------------------------------------------------------------------
+n = len(nums)
+  
+expect_sum = n*(n+1)//2
+act_sum = sum(nums)
+
+diff = act_sum - expect_sum
+
+expect_squar_sum = n*(n+1)*(2*n+1)//6
+act_squar_sum = sum(i*i for i in nums)
+
+sqr_diff = act_squar_sum - expect_squar_sum  
+
+dupl_plus_miss = sqr_diff // diff 
+
+duplicate = (diff + dupl_plus_miss)//2
+missing = duplicate - diff 
