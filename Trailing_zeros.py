@@ -41,3 +41,18 @@ print(obj.trailingZeroes(100))
 
 # T.C : O(logn) 
 # S.C: o(1) 
+
+# For simple understanding
+# Here , 5! have 1 0's , 10! have 2 0's , then if the guy gives a num , ask how many zero present in num, just cal how many 5's are there, 
+# you'll get the answer 
+
+# 1! = 1
+# 2! = 2
+# 3! = 6
+# 4! = 24
+# 5! = 120
+# 6! = 720
+# 7! = 5,040
+# 8! = 40,320
+# 9! = 362,880
+# 10! = 3,628,800
