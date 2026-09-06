@@ -1,0 +1,35 @@
+nums =[100,10,1]
+
+summ = nums[0] ; mx = nums[0] ;  n = len(nums)
+
+for i in range(1, len(nums)):
+    
+    if nums[i-1] < nums[i]:
+        summ += nums[i] 
+    
+    else:
+        summ = nums[i]
+
+  mx = max(mx, summ) 
+    
+
+if nums[n-2] < nums[-1] :
+    summ += nums[-1] 
+    mx = max(mx, summ) 
+
+here it fails , think about solution easily , start from 1 range, to check previous element , greater than or not, if condition stafies 
+add the element, if condition fails  , reset and add element , calculate maximum element , remove the comapreing last and previous last element
+
+nums =[100,10,1]
+
+summ = nums[0] ; mx = nums[0] ;  n = len(nums)
+
+for i in range(1, len(nums)):
+    
+    if nums[i-1] < nums[i]:
+        summ += nums[i] 
+    
+    else:
+        summ = nums[i]
+
+  mx = max(mx, summ) 
