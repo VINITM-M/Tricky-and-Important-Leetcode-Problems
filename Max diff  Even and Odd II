@@ -7,7 +7,25 @@ suppose if we takes odd = 5 , even = 1 (diff = 4) , it's maximum.
 that's basic approach , now we can discuss 
 
 
-Approach extend of https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/
+Approach extend of https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/ 
+
+We're going to optimize the approach , first see the question they didn't ask unique strings b/w the range , they're asking, 
+simple max diff b/w the odd - even 
+
+so that we remove this line of code 
+
+ j = i + 1
+    while j < len(s):
+
+        while j >= i + k - 1 and j < len(s) - 1 and s[j] == s[j + 1]:
+            j += 1
+
+        if j >= i + k - 1 and (j == len(s) - 1 or s[j] != s[j + 1]):
+
+into 
+    for j in range(i+k-1, len(s)) : 
+
+Imp Line: i+k-1
 
 from collections import Counter
 
@@ -17,13 +35,7 @@ ans = float('-inf')
 
 for i in range(len(s)):
 
-    j = i + 1
-    while j < len(s):
-
-        while j >= i + k - 1 and j < len(s) - 1 and s[j] == s[j + 1]:
-            j += 1
-
-        if j >= i + k - 1 and (j == len(s) - 1 or s[j] != s[j + 1]):
+    for j in range(i+k-1, len(s)): 
 
             mpp = Counter(s[i:j + 1])
 
