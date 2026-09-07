@@ -1,0 +1,49 @@
+How do you calculate max diff  between odd and even 
+
+if odd = 4 , even = 5 (diff = 1 ) it's not maximum anymore  
+
+suppose if we takes odd = 5 , even = 1 (diff = 4) , it's maximum. 
+
+that's basic approach , now we can discuss 
+
+
+Approach extend of https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/
+
+from collections import Counter
+
+s = "110"; k = 3
+
+ans = float('-inf')
+
+for i in range(len(s)):
+
+    j = i + 1
+    while j < len(s):
+
+        while j >= i + k - 1 and j < len(s) - 1 and s[j] == s[j + 1]:
+            j += 1
+
+        if j >= i + k - 1 and (j == len(s) - 1 or s[j] != s[j + 1]):
+
+            mpp = Counter(s[i:j + 1])
+
+            odd = -1
+            even = float('inf')
+
+            for val in mpp.values():
+
+                if val % 2:
+                    odd = max(odd, val)
+                else:
+                    even = min(even, val)
+
+            if odd != -1 and even != float('inf'): #maintaining atleast one odd , even frequency , if it calculates high 
+                ans = max(ans, odd - even)
+
+        j += 1
+
+print(ans) 
+
+time complexicty : O(N*3) 
+
+Let's discuss how to optimized it 
